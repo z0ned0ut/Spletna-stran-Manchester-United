@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Šolska navijaška stran o Manchester Unitedu: klub, zgodovina in igralci.">
+    <title>Navijaški kotiček | Manchester United</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="slike/Manchester_United_FC_crest.png">
+</head>
+<body>
+<header>
+    <div class="vrh vsebina">
+        <a class="znamka" href="index.html"><img class="grb" src="slike/Manchester_United_FC_crest.png">MANCHESTER UNITED</a>
+        <span class="oznaka">NAVIJAŠKA STRAN</span>
+    </div>
+    <nav aria-label="Glavna navigacija" class="vsebina">
+        <ul>
+            <li><a href="index.html" >Domov</a></li>
+            <li><a href="zgodovina.html" >Zgodovina</a></li>
+            <li><a href="navijaci.html" class="trenutna" aria-current="page">Navijaški kotiček</a></li>
+        </ul>
+        <button id="tema" type="button" aria-pressed="false">Temni način</button>
+    </nav>
+</header>
+<main class="vsebina">
+    <section class="naslov-strani">
+        <p class="nadnaslov">ZA LJUBITELJE UNITEDA</p>
+        <h1>Navijaški kotiček</h1>
+        <p>Poišči klubsko legendo in ustvari svojo navijaško predstavitev.</p>
+    </section>
+    <section>
+        <div class="naslov-vrsta"><h2>Izbrane legende</h2><span class="nalepka">6 IGRALCEV</span></div>
+        <div class="filtri kartica">
+            <div><label for="iskanje">Poišči po imenu</label><input type="search" id="iskanje" name="iskanje" placeholder="Npr. Ronaldo"></div>
+            <div><label for="polozaj">Položaj</label><select id="polozaj" name="polozaj"><option value="vsi">Vsi položaji</option value="Napadalec">Napadalec</option><option value="Vezist">Vezist</option><option value="Vratar">Vratar</option></select></div>
+        </div>
+        <p id="stevilo" class="drobno" aria-live="polite"></p>
+        <div id="igralci" class="igralci"></div>
+        <noscript>Za prikaz in iskanje igralcev omogoči JavaScript v brskalniku.</noscript>
+        <p class="drobno">To je izbor nekdanjih igralcev, ne trenutna postava. <a href="https://ir.manutd.com/company-information/history.aspx" target="_blank" rel="noopener noreferrer">Več o klubski zgodovini ↗</a></p>
+    </section>
+    <section class="dva-stolpca razmik">
+        <article>
+            <p class="nadnaslov">TVOJA NAVIJAŠKA PREDSTAVITEV</p>
+            <h2>Kaj ti pomeni United?</h2>
+            <p>Izpolni obrazec in pod njim se bo prikazala tvoja predstavitev.</p>
+            <p class="drobno">To je učni obrazec. Podatki ostanejo samo na odprti strani in izginejo ob osvežitvi. Uporabi izmišljene podatke.</p>
+        </article>
+        <div class="kartica">
+            <form id="obrazec" novalidate>
+                <label for="ime">Ime ali vzdevek</label>
+                <input type="text" id="ime" name="ime" maxlength="40" required>
+                <label for="email">E-pošta (izmišljena)</label>
+                <input type="email" id="email" name="email" maxlength="100" required>
+                <label for="leta">Koliko let navijaš za klub?</label>
+                <input type="number" id="leta" name="leta" min="0" max="100" step="1" required>
+                <label for="najljubsi">Najljubši igralec iz izbora</label>
+                <select id="najljubsi" name="najljubsi" required>
+                    <option value="">Izberi igralca</option>
+                    <option>Wayne Rooney</option><option>Cristiano Ronaldo</option><option>Paul Scholes</option><option>Ryan Giggs</option><option>David Beckham</option><option>David De Gea</option>
+                </select>
+                <label for="sporocilo">Zakaj navijaš za United?</label>
+                <textarea id="sporocilo" name="sporocilo" rows="3" maxlength="300" required></textarea>
+                <div class="potrditev"><input type="checkbox" id="potrditev" name="potrditev" required><label for="potrditev">Razumem, da je to učni prikaz.</label></div>
+                <button class="gumb" type="submit">Prikaži predstavitev →</button>
+            </form>
+            <p id="rezultat" class="obvestilo" role="status" aria-live="polite" hidden></p>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="vsebina noga">
+        <p>Manchester United</p>
+        <a href="https://www.manutd.com/" target="_blank" rel="noopener noreferrer">Uradna stran kluba ↗</a>
+    </div>
+    <p class="vsebina drobno">Neuradna navijaška stran.</p>
+</footer>
+<script src="skripta.js"></script>
+</body>
+</html>
